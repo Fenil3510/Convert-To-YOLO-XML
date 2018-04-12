@@ -4,7 +4,7 @@ from jinja2 import Environment, PackageLoader
 
 class xml_fill:
     def __init__(self, path, width, height, depth=3, database='Unknown', segmented=0):
-        environment = Environment(loader=PackageLoader('source', 'XML_template'), keep_trailing_newline=True)
+        environment = Environment(loader=PackageLoader('convert_yolo_xml.source', 'XML_template'), keep_trailing_newline=True)
         self.annotation_template = environment.get_template('yolo_template.xml')
 
         abspath = os.path.abspath(path)
