@@ -38,7 +38,6 @@ def get_xml_combined_mask(ImagePath, classname, save_image_path , save_annot_pat
 				x, y, w, h = BoundingBoxGenerator(ImagePath + '/' + dirs + '/' + 'masks' +'/'+ img)
 				filler.addBox(classname, x, y, w, h)
 		_ , thresh = cv2.threshold(maximum ,0.5,255,cv2.THRESH_BINARY)
-		print(sum(sum(thresh)))
 		im = Image.fromarray(thresh)
 		if im.mode != 'RGB':
 			im = im.convert('RGB')
